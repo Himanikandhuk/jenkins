@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(_name_)
+app = Flask(__name__)  # Corrected from _name_ to __name__
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -23,5 +23,5 @@ def home():
 def success():
     return "Registration done successfully!"
 
-if _name_ == '_main_':
+if __name__ == '__main__':  # Corrected from _name_ to __name__
     app.run(debug=True)
